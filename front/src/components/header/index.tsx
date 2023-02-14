@@ -1,8 +1,8 @@
-import { FooterContainer } from "components/footer/styles";
+import { HeaderContainer } from "./styles";
 import React from "react";
 
 const Header = () => {
-  return <FooterContainer>Header</FooterContainer>;
+  return <HeaderContainer>Header</HeaderContainer>;
 };
 
 export default Header;

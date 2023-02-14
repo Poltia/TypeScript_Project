@@ -1,5 +1,5 @@
-import Layout from "layouts/Layout";
-import Main from "pages/Main";
+import Layout from "../layouts/Layout";
+import Main from "../pages/Main";
 import React from "react";
 import { useRoutes } from "react-router-dom";
 
