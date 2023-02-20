@@ -1,6 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import produce from "immer";
 
+interface IuserState {
+  user: {
+    isLogin: boolean;
+    loginUser: {
+      user_email: string;
+      user_nickname: string;
+    };
+  };
+}
+
 export const userSlice = createSlice({
   name: "user",
 
@@ -34,8 +44,9 @@ export const userSlice = createSlice({
 });
 
 export const { login, logout, signup } = userSlice.actions;
-export const selectIsLogin = (state: any) => state.user.isLogin;
-export const selectLoginUser = (state: any) => state.user.loginUser;
-export const selectSignupUser = (state: any) => state.user.loginUser.user_email;
+export const selectIsLogin = (state: IuserState) => state.user.isLogin;
+export const selectLoginUser = (state: IuserState) => state.user.loginUser;
+export const selectSignupUser = (state: IuserState) =>
+  state.user.loginUser.user_email;
 
 export default userSlice.reducer;
