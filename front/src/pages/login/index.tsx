@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PwInput from "../../components/passwordInput";
-import ValidateInput from "../../components/validateInput";
+import PwInput from "@/components/passwordInput";
+import ValidateInput from "@/components/validateInput";
 import { checkEmail } from "./model";
-import { LoginContainer } from "./styles";
+import { LoginButton, LoginContainer } from "./styles";
 
 const Login = () => {
   // hook 할당
@@ -29,6 +29,7 @@ const Login = () => {
         setInput={setPassword}
         placeholder={"8자 이상, 영문 숫자 조합"}
       />
+      <LoginButton onClick={() => nav("/main")}>로그인</LoginButton>
     </LoginContainer>
   );
 };

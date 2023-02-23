@@ -9,7 +9,7 @@ import {
   PasswordValidateLabel,
 } from "./styles";
 import { useDispatch } from "react-redux";
-import { validatePassword } from "../../store/reducers/validateReducer";
+import { validatePassword } from "@/store/reducers/validateReducer";
 
 // input props의 type 선언
 interface IinputProps {
@@ -53,7 +53,7 @@ const PwInput: React.FC<IinputProps> = ({ title, placeholder, setInput }) => {
   return (
     <PasswordContainerDiv>
       {/* TITLE */}
-      <label style={{ fontSize: "4.5rem" }}>{title}</label>
+      <label style={{ fontSize: "20px" }}>{title}</label>
 
       {/* INPUT WRAP */}
       <PasswordInputWrapDiv>
@@ -66,9 +66,13 @@ const PwInput: React.FC<IinputProps> = ({ title, placeholder, setInput }) => {
 
         {/* PASSWORD SHOW/HIDE TOGGLE */}
         {isEyeOpen ? (
-          <EyeIcon onClick={eyeHandler}>비밀번호 표시</EyeIcon>
+          <div onClick={eyeHandler}>
+            <EyeIcon>비밀번호 표시</EyeIcon>
+          </div>
         ) : (
-          <EyeCloseIcon onClick={eyeHandler}>비밀번호 숨김</EyeCloseIcon>
+          <div onClick={eyeHandler}>
+            <EyeCloseIcon>비밀번호 숨김</EyeCloseIcon>
+          </div>
         )}
       </PasswordInputWrapDiv>
 

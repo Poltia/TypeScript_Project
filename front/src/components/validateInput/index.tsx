@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { validateText } from "../../store/reducers/validateReducer";
+import Cancel from "@/assets/icons/Cancel";
+import { validateText } from "@/store/reducers/validateReducer";
 import {
   ValidateContainerDiv,
   ValidatedInput,
   ValidateErrorLabel,
   ValidateInputWrapDiv,
-  CancelAll,
 } from "./styles";
 
 // input props의 type 선언
 interface IinputProps {
   title: string;
   input: string;
-  setInput: Function;
+  setInput: React.Dispatch<React.SetStateAction<string>>;
   placeholder: string;
   validateCallback: Function[];
   errorLabel: string;
@@ -34,9 +34,8 @@ const ValidateInput: React.FC<IinputProps> = ({
   const [pass, setPass] = useState(true);
 
   // input값 할당할 함수
-  const inputHandler = (e: any) => {
-    setInput(e.target.value);
-  };
+  const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setInput(event.target.value);
 
   // input value의 lifecycle
   useEffect(() => {
@@ -64,19 +63,17 @@ const ValidateInput: React.FC<IinputProps> = ({
 
   return (
     <ValidateContainerDiv>
-      <label style={{ fontSize: "4.5rem" }}>{title}</label>
+      <label style={{ fontSize: "20px" }}>{title}</label>
       <ValidateInputWrapDiv>
         <ValidatedInput
           placeholder={placeholder}
           onChange={inputHandler}
-          value={input || ""}
+          value={input || ""} // undefined 방지
         />
         {input ? (
-          <CancelAll
-            onClick={() => {
-              setInput("");
-            }}
-          />
+          <div onClick={() => setInput("")}>
+            <Cancel />
+          </div>
         ) : (
           <></>
         )}

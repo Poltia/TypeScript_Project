@@ -1,6 +1,6 @@
 import styled, { StyledComponent } from "styled-components";
-import Eye from "../../assets/icons/Eye";
-import EyeClose from "../../assets/icons/EyeClose";
+import Eye from "@/assets/icons/Eye";
+import EyeClose from "@/assets/icons/EyeClose";
 
 interface Iprops extends React.HTMLAttributes<HTMLElement> {
   onClick?: () => void;
@@ -8,24 +8,24 @@ interface Iprops extends React.HTMLAttributes<HTMLElement> {
 
 export const PasswordContainerDiv = styled.div`
   width: auto;
-  padding: 1.5rem;
+  padding: 5px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin: 4rem;
+  gap: 20px;
+  margin: 30px;
   position: relative;
 `;
 
 export const PasswordInputWrapDiv = styled.div`
   border: 2px solid gray;
-  padding: 3.5rem;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   background-color: white;
 `;
 
 export const PasswordInput = styled.input`
-  font-size: 4rem;
+  font-size: 20px;
   border: 0 solid;
   width: 100%;
   outline: none;

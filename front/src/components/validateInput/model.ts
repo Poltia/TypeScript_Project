@@ -1,4 +1,4 @@
-import { CHAR_LENGTH_8 } from "../../constants/loginConstant";
+import { CHAR_LENGTH_8 } from "@/constants/loginConstant";
 
 // 빈칸인지 확인하는 함수
 export const checkBlank = (input: string) => {

@@ -1,10 +1,11 @@
 import React from "react";
+import Day from "@/components/day";
 import { MainContainer } from "./styles";
 
 const Main = () => {
   return (
     <MainContainer>
-      Main
+      <Day />
     </MainContainer>
   );
 };
