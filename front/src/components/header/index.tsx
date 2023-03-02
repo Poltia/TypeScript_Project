@@ -15,8 +15,8 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContentsWrapDiv>
-        <div onClick={() => nav(SPENDING_PATH)}>지출</div>
         <div onClick={() => nav(INCOME_PATH)}>수입</div>
+        <div onClick={() => nav(SPENDING_PATH)}>지출</div>
         <div onClick={() => nav(TRANSFER_PATH)}>이체</div>
         <div>닉네임</div>
         <div onClick={() => nav(LOGIN_PATH)}>로그아웃</div>
